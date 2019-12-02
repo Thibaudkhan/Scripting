@@ -11,7 +11,7 @@ class Init:
         print("function Init")
         print("Je m'appelle", self.name)
 
-        Age_Person([self.name, 21]).age_person()
+        Age_Person([self.name, 21],3).age_person()
 
 
 name = "Antoine"
