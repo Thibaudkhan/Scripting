@@ -24,11 +24,11 @@ def detection_file():
     args = parser.parse_args().file.readlines()
 
     if ".json" in str(parser.parse_args()):
-        update_CONFIG(("".join(args).replace('"', '').replace('\n', '').replace(' ', '').replace("}", "")).split(","))
+        update_CONFIG(("".join(args).replace('"' or '\n' or ' ' or "}", '')).split(","))
     elif ".txt" in str(parser.parse_args()):
-        update_CONFIG(("-//-".join(args).replace('"', '').replace('\n', '').replace(' ', '')).split("-//-"))
+        update_CONFIG(("-//-".join(args).replace('"' or '\n' or ' ' or "}", '')).split("-//-"))
     elif ".yaml" in str(parser.parse_args()):
-        update_CONFIG(("-//-".join(args).replace('"', '').replace('\n', '').replace(' ', '')).split("-//-"))
+        update_CONFIG(("-//-".join(args).replace('"' or '\n' or ' ' or "}", '')).split("-//-"))
     else:
         print("ERROR type of file not found")
 
