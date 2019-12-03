@@ -11,96 +11,77 @@ print(" ")
 
 print(" ===== Exo === ")
 
-toto = "oui"
-
-"""
-convert string to list
-"""
+toto = "ABCD"
 
 
 def convert_str_to_list(list_to_convert):
+    """
+    convert string to list
+    """
     return [i for i in list_to_convert]
 
 
-"""
-convert string to list
-"""
-
-
 def convert_str_to_ascii(list_to_convert):
+    """
+    convert string to list
+    """
     return [ord(i) for i in list_to_convert]
 
 
-"""
-convert ascii to binary
-"""
-
-
 def convert_ascii_to_binary(list_to_convert):
+    """
+    convert ascii to binary
+    """
     return [bin(i).replace("0b", "") for i in list_to_convert]
 
 
-"""
-convert binary on eight bit
-"""
-
-
 def convert_binary_on_eight_bit(list_to_convert):
+    """
+    convert binary on eight bit
+    """
     return ["0" * (8 - len(i)) + i for i in list_to_convert if len(i) < 8]
 
 
-"""
-convert eight bit to string
-"""
-
-
 def convert_eight_bit_to_string(list_to_convert):
+    """
+    convert eight bit to string
+    """
     return "".join(list_to_convert)
 
 
-"""
-convert string to six bit
-"""
-
-
 def convert_string_to_six_bit(list_to_convert):
+    """
+    convert string to six bit
+    """
     return [list_to_convert[i:i + 6] for i in range(0, len(list_to_convert), 6)]
 
 
-"""
-convert binary to decimal
-"""
-
-
 def convert_binary_to_decimal(list_to_convert):
+    """
+    convert binary to decimal
+    """
     return [int(i, 2) for i in list_to_convert]
 
 
-"""
-convert decimal to ascii character
-"""
-
-
 def convert_decimal_to_ascii_character(list_to_convert):
+    """
+    convert decimal to ascii character
+    """
     l = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     return [l[i] for i in list_to_convert]
 
 
-"""
-convert list to str
-"""
-
-
 def convert_list_to_str(list_to_convert):
+    """
+    convert list to str
+    """
     return "".join(list_to_convert)
 
 
-"""
-rezise str to multiple of eight
-"""
-
-
 def rezise_str_to_multiple_of_eight(list_to_convert):
+    """
+    rezise str to multiple of eight
+    """
     while len(list_to_convert) % 8 != 0:
         list_to_convert += "="
     return list_to_convert
@@ -127,11 +108,6 @@ print("l_9 => ", l_9)
 l_10 = rezise_str_to_multiple_of_eight(l_9)
 print("l_10 => ", l_10)
 
-# =====================================================================
-# =====================================================================
-# =====================================================================
-print(" ")
-print(" ")
 # =====================================================================
 # =====================================================================
 # =====================================================================

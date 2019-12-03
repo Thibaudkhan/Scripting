@@ -1,6 +1,4 @@
-my_list = ["A","B"]
-my_char = "eurhgiebgierngieubrgioehngienfginegda"
-my_list_b = ["Aaaaa","Bddddddd","fzfzfzf"]
+
 #
 ## convert string to list
 #
@@ -24,6 +22,7 @@ def rezise_str_to_multiple_of_eight(list_to_convert):
     while len(list_to_convert) % 8 != 0: # ou 4 (info tibo)
         list_to_convert += "="
     return list_to_convert
+
 
 def convert_str_to_list(word):
     '''Spliter une chaîne de caractère en liste'''
@@ -87,11 +86,8 @@ def convert_ascii_to_binary(list_to_convert):
     return [bin(i).replace("0b", "") for i in list_to_convert]
 
 
-
 def convert_binary_to_decimal(list_to_convert):
     return [int(i, 2) for i in list_to_convert]
-
-
 
 
 l_1 = convert_str_to_list("ABCD")
