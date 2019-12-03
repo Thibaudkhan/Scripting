@@ -1,0 +1,32 @@
+US 1 :  brew install python3
+Pour installer pythnon3 et en lancant la commande "python3" dans le terminal on ouvre l'interpreteur pour pouvoir
+executer du code python
+
+
+
+US 2
+L'interpreteur lit et exécute les commandes de façon interactive.
+
+Créer un dictionnaire dont chaque key a une valeur:
+
+# - Pour chaque membre du groupe age sera égale à age +1
+
+name_group = ["Antonin", "Thibaud", "Quentin", "Antoine"]
+for x in name_group:
+    listing[x] = age
+    age = age + 1
+
+# - Ajouter la key "nouveau" dans le dictionnaire dont la valeur est jeSuisNouveaux
+
+'Antonin', 'test', 'Quentin', 'Antoine']
+listing[nouveau]= 'jeSuisNouveaux'
+listing
+{'Antonin': 24, 'Quentin': 26, 'Antoine': 27, 'Thibaud': 25, nouveau: 'jeSuisNouveaux'}
+
+# - La valeur de Quentin prend 21
+
+listing['Quentin']= '21'
+listing
+{'Antonin': 24, 'Quentin': '21', 'Antoine': 27, 'Thibaud': 25, 2: 'test2'}
+
+
