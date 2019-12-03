@@ -1,5 +1,5 @@
-from Exemple.Age_Person.Age_Person import Age_Person
-from Exemple.Name_Person.Name_Person import Name_Person
+from Scripts.Exemple.Age_Person.Age_Person import Age_Person
+from Scripts.Exemple.Name_Person.Name_Person import Name_Person
 
 
 class Init:
