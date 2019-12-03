@@ -1,18 +1,17 @@
 import base64
-import string
 
-encoded = base64.b64encode(b'ABCD')
+encoded = base64.b64encode(b'oui')
 data = base64.b64decode(encoded)
 
 print(" ")
-print(" Result ")
+print(" == Result == ")
 print(data)
 print(encoded)
 print(" ")
 
+print(" ===== Exo === ")
 
-toto = "ABCD"
-
+toto = "oui"
 
 """
 convert string to list
@@ -136,5 +135,3 @@ print(" ")
 # =====================================================================
 # =====================================================================
 # =====================================================================
-
-
