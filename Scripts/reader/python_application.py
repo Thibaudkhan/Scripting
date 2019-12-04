@@ -8,8 +8,7 @@
 
 import argparse
 from os import listdir, walk, path
-from os.path import getctime, getsize
-from datetime import date
+from os.path import getctime, getsize, getatime, getmtime
 import time
 
 
@@ -58,7 +57,13 @@ def listing_file(CONFIG):
     for (directory, underDirectories, files) in walk(CONFIG["directory"]):
         fileList.extend(files)
         for i in files:
-            RESULT[i] = {"directory": directory, "last_change_metadata": getctime(directory + '/' + i), "file_size": getsize(directory + '/' + i)}
+            RESULT[i] = {
+                "directory": directory,
+                "last_change_metadata": getctime(directory + '/' + i),
+                "file_size": getsize(directory + '/' + i),
+                "last_access": getatime(directory + '/' + i),
+                "last_change": getmtime(directory + '/' + i)
+            }
 
     # getaTime(i)
     # getmTime(i)
