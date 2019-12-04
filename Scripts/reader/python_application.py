@@ -1,15 +1,41 @@
 # Dans un repertoire
 # Detecter les fichers .txt .json et .yaml
 # L'application doit detecter quand il y a une modification dans les fichier
-# L'application doit copier les fichiers qui ont étaient modifier
+# L'application doit copier les fichiers qui ont été modifié
 # Créer une log des modifications et l'afficher
 
 # Les signature (SHA256)
 
 import argparse
-from os import listdir, walk, path
-from os.path import getctime, getsize, getatime, getmtime
+import shutil
+from os import listdir, walk, path, makedirs
+from os.path import getctime, getsize, getatime, getmtime, exists
 import time
+
+
+def read_in_consolelog_file(message):
+    file = open("Backup/console_log.txt", "a")
+    file.write("\n")
+    file.write(message)
+    file.close()
+
+
+def backup_of_modified_files(NEW_BACKUP, OLD_BACKUP, timing):
+
+    new_val = []
+
+    if not exists(timing.replace(" ", "_")):
+        makedirs("Backup/" + timing.replace(" ", "_"))
+
+    if NEW_BACKUP.keys() == OLD_BACKUP.keys():
+        for keys, values in OLD_BACKUP.items():
+            if values != NEW_BACKUP[keys]:
+                new_val.append(keys)
+                shutil.copy(NEW_BACKUP[keys]["directory"] + "/" + keys,
+                    "/Users/antoine/Desktop/Coding Factory/#20 Scripting/Code/GitHub/Scripting/Scripts/reader/Backup/"
+                    + timing.replace(" ", "_") + "/" + keys)
+
+    return new_val
 
 
 def detection_file():
@@ -65,9 +91,6 @@ def listing_file(CONFIG):
                 "last_change": getmtime(directory + '/' + i)
             }
 
-    # getaTime(i)
-    # getmTime(i)
-
     return RESULT
 
 
@@ -83,19 +106,29 @@ def main():
     print("           ---------------------------           ")
     print("=================================================")
     print(" ")
+    print("Press CTRL + C to quit")
+    print(" ")
 
     CONFIG = detection_file()
     INFO_FILELIST = {}
 
-    i = 0
-    while i <= int(CONFIG["timer"]):
-        INFO_FILELIST[time.asctime()] = listing_file(CONFIG)
-        time.sleep(2)
-        i += 1
+    while True:
+        if len(INFO_FILELIST.keys()) == 0:
+            INFO_FILELIST[time.asctime()] = listing_file(CONFIG)
+        elif listing_file(CONFIG) != INFO_FILELIST[str(max(INFO_FILELIST.keys()))]:
+            modify_files = backup_of_modified_files(listing_file(CONFIG), INFO_FILELIST[str(max(INFO_FILELIST.keys()))], time.asctime())
+            print(modify_files)
+            read_in_consolelog_file(time.asctime() + "  =>  modify files  =>  " + " ".join(modify_files))
+            INFO_FILELIST[time.asctime()] = listing_file(CONFIG)
 
-    #    PRINTS    #
+        time.sleep(int(CONFIG["timer"]))
+
+    '''
+    # == PRINTS == #
     for i, j in CONFIG.items():
         print("CONFIG =>", i, "=", j)
+
+    print(" ")
 
     for i, j in INFO_FILELIST.items():
         print(" ")
@@ -106,7 +139,7 @@ def main():
             for m, n in l.items():
                 print("        ", m, " : ", n)
     # // PRINTS // #
-
+    '''
     print(" ")
 
 

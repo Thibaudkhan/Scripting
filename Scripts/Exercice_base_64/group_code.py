@@ -1,9 +1,4 @@
 
-#
-## convert string to list
-#
-
-
 def convert_str_to_ascii(my_list):
     listing = []
     for x in my_list:
