@@ -18,7 +18,6 @@ def rezise_str_to_multiple_of_eight(list_to_convert):
         list_to_convert += "="
     return list_to_convert
 
-
 def convert_str_to_list(word):
     '''Spliter une chaîne de caractère en liste'''
     return [char for char in word]
