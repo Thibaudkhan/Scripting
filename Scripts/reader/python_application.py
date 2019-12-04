@@ -32,7 +32,7 @@ def backup_of_modified_files(NEW_BACKUP, OLD_BACKUP, timing):
             if values != NEW_BACKUP[keys]:
                 new_val.append(keys)
                 shutil.copy(NEW_BACKUP[keys]["directory"] + "/" + keys,
-                    "Backup/"
+                    "./Backup/"
                     + timing.replace(" ", "_") + "/" + keys)
 
     return new_val

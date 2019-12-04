@@ -5,6 +5,7 @@ my_list_b = ["Aaaaa", "Bddddddd", "fzfzfzf"]
 
 #
 ## convert string to list
+#ok
 #
 def convert_str_to_ascii(my_list):
     for x in my_list:
