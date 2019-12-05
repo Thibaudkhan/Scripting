@@ -21,8 +21,8 @@ def rotation_Rotor(result):
 
 
 def Validate(result):
-    for elt in result:
-        if alphabetList.count(elt.upper()) < 1:
+    for x in result:
+        if alphabetList.count(x.upper()) < 1:
             return False
     return True
 
@@ -42,9 +42,9 @@ for i in range(0, len(message_List), 1):
     elif message_List[i] == "'":
         s.append("'")
     else:
-        print(rotor1)
-        print(rotor2)
-        print(rotor3)
+        print("rotor1 => ", rotor1)
+        print("rotor2 => ", rotor2)
+        print("rotor3 => ", rotor3)
         a = alphabetDict[message_List[i].upper()]
         # print(a)
         b = rotor1[a - 1]
