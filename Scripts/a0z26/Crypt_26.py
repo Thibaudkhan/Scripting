@@ -1,3 +1,5 @@
+
+
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U','V', 'W', 'X', 'Y', 'Z']
 alphabetCode = ['NC', 'OD', 'PD', 'QD', 'RD', 'SD', 'TD', 'UD', 'VD', 'WD', 'XD', 'YD', 'ZD', 'AD', 'BD', 'CD', 'DD','ED', 'FD', 'GD', 'HD', 'ID', 'JD', 'KD', 'LD', 'MD']
 
@@ -35,7 +37,7 @@ class Base:
         for i in list_ascii:
             quotient += i
 
-            if(i == 0):
+            if i == 0:
                 result = alphabet[0] + result
                 print("0 ::"+result)
 
@@ -92,7 +94,12 @@ class Base:
             dcrpt.write(list_decrypted)
             dcrpt.close()
 
+#
+# Call the main() function
+#
+if __name__ == "__main__":
+    b = Base()
+    b.call_crypt()
+    b.call_decrypt()
 
-b = Base()
-b.call_crypt()
-b.call_decrypt()
+
