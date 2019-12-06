@@ -5,9 +5,9 @@ from Params.Params import Params
 
 
 def main():
-    """
+    '''
     :return: init to import params and encryption value
-    """
+    '''
 
     print(" ")
     print("=================================================")
