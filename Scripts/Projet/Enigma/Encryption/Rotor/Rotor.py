@@ -14,10 +14,8 @@ class Rotor:
         if method == 1:
             a = dictionnary[letter]
             b = rotor[a + indice_rotor]
-            """
-            if letter in WIRING["TURNOVER"]:
-                WIRING["TURNOVER"].index(letter)
-            """
+            # if letter in WIRING["TURNOVER"]:
+                # WIRING["TURNOVER"].index(letter)
         else:
             a = rotor.index(dictionnary)
             b = WIRING["ETW"][a]
@@ -35,14 +33,12 @@ class Rotor:
 
     def move_rotor(self, nb_exec):
         '''
-        :param nb_exec:
+        :param nb_exec: number of execution
         :return: if condition for move rotor is True
         '''
 
-        """
-        def turnover(rotor):
-            Rotor(self.ROTOR).rotation_Rotor(WIRING[self.ROTOR[rotor]])
-        """
+        # def turnover(rotor):
+            # Rotor(self.ROTOR).rotation_Rotor(WIRING[self.ROTOR[rotor]])
 
         if (nb_exec + 1) % 1 == 0:
             Rotor(self.ROTOR).rotation_Rotor(WIRING[self.ROTOR["rotor1"]])

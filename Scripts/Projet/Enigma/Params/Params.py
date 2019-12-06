@@ -4,15 +4,18 @@ import argparse
 class Params:
 
     def detection_file(self):
-        """
-        detect a config file
-        if a config file => stock in dict "CONFIG" a value
-        """
+        '''
+        :return: detect a config file
+                 if a config file => stock in dict "CONFIG" a value
+        '''
 
         def update_CONFIG(value_of_file):
-            """
-            add to config file
-            """
+            '''
+
+            :param value_of_file:
+            :return: add to config file
+            '''
+
             CONFIG["value"] = value_of_file[0].split(":")[1]
             CONFIG["method"] = value_of_file[1].split(":")[1]
 

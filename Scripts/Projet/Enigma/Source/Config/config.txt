@@ -1,2 +1,2 @@
-value:BB
+value:HELLO WORD
 method:encrypt
