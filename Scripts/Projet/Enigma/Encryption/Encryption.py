@@ -9,9 +9,9 @@ class Encryption:
         self.ROTOR = ROTOR
 
     def encryption(self):
-        """
+        '''
         :return: encryption value according to the parameters
-        """
+        '''
 
         def isValidate(result):
             for x in result:
@@ -57,5 +57,7 @@ class Encryption:
                 out_rotor_1 = Rotor(self.ROTOR).letter_rotor(0, WIRING["alphabetDict"], out_rotor_2, WIRING[self.ROTOR["rotor1"]], "")
 
                 list_result.append(out_rotor_1)
+
+            Rotor(self.ROTOR).move_rotor(i)
 
         return ''.join(list_result)
