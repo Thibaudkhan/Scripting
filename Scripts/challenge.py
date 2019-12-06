@@ -5,7 +5,7 @@ Let's see what the most concise solutions can be...
 """
 
 
-def replace_zeros_by_ones_in_a_string(string_to_transform):
+def replace_zeros_by_ones_in_a_string(s):
     """
 ​
     Args:
@@ -18,13 +18,8 @@ def replace_zeros_by_ones_in_a_string(string_to_transform):
             string_to_transform = '00100010001011101' should be transformed to '11011101110100010'
 ​
     """
-    transformed_string = ''
-    for i in string_to_transform:
-        if i == "0":
-            transformed_string += "1"
-        elif i == "1":
-            transformed_string += "0"
-    return transformed_string
+    # return s.replace('0', 'a').replace('1', '0').replace('a', '1')
+    return s.translate(s.maketrans('01', '10'))
 
 
 def main():
