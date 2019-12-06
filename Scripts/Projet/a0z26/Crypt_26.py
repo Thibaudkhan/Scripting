@@ -4,11 +4,10 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-c", "--crypt", action="store_true",  help="Do you want to encrypt or decrypt the file ?")
 args = parser.parse_args()
 
-alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-            'V', 'W', 'X', 'Y', 'Z']
-alphabetCode = ['NC', 'OD', 'PD', 'QD', 'RD', 'SD', 'TD', 'UD', 'VD', 'WD', 'XD', 'YD', 'ZD', 'AD', 'BD', 'CD', 'DD',
-                'ED', 'FD', 'GD', 'HD', 'ID', 'JD', 'KD', 'LD', 'MD']
-
+alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U','V', 'W', 'X', 'Y', 'Z','À','É','À','È','Ç','Ù','Â','Ê','Î','Ô','Û','Ë','Ï','Ü','Ÿ']
+alphabetCode = ['NC', 'OD', 'PD', 'QD', 'RD', 'SD', 'TD', 'UD', 'VD', 'WD', 'XD', 'YD', 'ZD', 'AD', 'BD', 'CD', 'DD','ED', 'FD', 'GD', 'HD', 'ID', 'JD', 'KD', 'LD', 'MD','TI','KI','SI','RI','JI','MH','UI','YI','EI','LI','VI','ZI','MI','MOB']
+print(len(alphabet))
+print(len(alphabetCode))
 
 class Base:
 
